@@ -18,8 +18,8 @@ ________________________________________________________________________________
 		
 	$(".someclass").getTweet("username", 4);
 
-// This will replace all of the html in elements matching the .someclass selector with a <ul id="getTweet">
-// Each tweet will be wrapped in an <li> with a class of "tweet".
+// This will replace all of the html in elements matching the .someclass selector with a <\ul id="getTweet">
+// Each tweet will be wrapped in an <\li> with a class of "tweet".
 
 _____________________________________________________________________________________
 
