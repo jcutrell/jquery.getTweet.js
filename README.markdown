@@ -8,6 +8,10 @@
 
 As long as twitter continues to serve JSON the way that they are currently doing, this plugin will work.
 
+Make sure you include jQuery before the plugin, (ex:)
+
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+
 It's pretty simple... Two methods.
 
 _____________________________________________________________________________________
@@ -21,6 +25,8 @@ ________________________________________________________________________________
 *Each tweet will be wrapped in an <\li> with a class of "tweet".*
 
 	$(".someclass").getTweet("username", 4);
+
+#####This method also adds markup to the tweets; @username will change to <a href="http://twitter.com/username">, and #hashtag will change to the twitter hash search path.
 
 _____________________________________________________________________________________
 ##Second method
