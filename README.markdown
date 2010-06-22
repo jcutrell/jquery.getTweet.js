@@ -26,7 +26,7 @@ ________________________________________________________________________________
 
 	$(".someclass").getTweet("username", 4);
 
-#####This method also adds markup to the tweets; @username will change to <\a href="http://twitter.com/username">@username</a>, and #hashtag will change to the twitter hash search path.
+#####This method also adds markup to the tweets; @username will change to "<a href="http://twitter.com/username">@username</a>", and #hashtag will change to the twitter hash search path.
 
 _____________________________________________________________________________________
 ##Second method
