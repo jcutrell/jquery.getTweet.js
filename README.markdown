@@ -14,11 +14,10 @@ ________________________________________________________________________________
 ##First method
 
 	$(".coolclass").getTweet("username");
-
 *The easiest way to use the plugin; grabs the latest tweet for @username and puts it inside the element corresponding to the matching selector.*
 		
+		
 	$(".someclass").getTweet("username", 4);
-
 *This will replace all of the html in elements matching the .someclass selector with a <\ul id="getTweet">*
 *Each tweet will be wrapped in an <\li> with a class of "tweet".*
 
@@ -26,27 +25,30 @@ ________________________________________________________________________________
 ##Second method
 
 	$.getTweet()
-
 *This method passes an array to the callback function.*
 
-	$.getTweet("username", 5, function(data){ // do something here })
 
+	$.getTweet("username", 5, function(data){ // do something here })
 *This method will grab the latest 5 tweets and pass them into the callback function.*
 		
+		
 	$.getTweet("username", [3, 9], function(data){ // do something here })
-
 *This method can also take a (0-indexed) array to grab, in this instance, tweets 4-10 from your latest tweets.*
 *This array is passed to the callback.*
 		
+		
 	$.getTweet("username", [9, 3], function(data){ // do something })
-
 *This will return the same array as the previous example, in reverse order.*
 		
+		
 	$.getTweet("username", function(data){ // do something })
-
 *The simplest usage of $.getTweet - grabs the latest tweet and stores it at the array[0] position.*
+
 		
 _____________________________________________________________________________________
+
+_____________________________________________________________________________________
+
 
 The plugin is intentionally low on features; in the future, I may add a few features, as geolocation, etc make their way.
 
