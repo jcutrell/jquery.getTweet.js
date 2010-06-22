@@ -30,13 +30,14 @@
 	
 	
 	
-//this method is more for development stuff, but fairly easy to use otherwise.
+//developer	
 	$.getTweet = function(username, numberOfTweets, callback, options){
 		$.getTweet.defaults = {
 				"username" : "jcutrell",
-				"numberOfTweets" : "4",
+				"numberOfTweets" : "1",
 				"callback" : ''
 		}
+		$.getTweet.api = {}
 		var options = $.extend({}, $.getTweet.defaults);
 		if (!($.isFunction(username)) && $.isPlainObject(username) && username != null)
 			{ options = $.extend({}, username) }
@@ -66,6 +67,7 @@
 		var jsonurl = "http://api.twitter.com/1/statuses/user_timeline/"+ opts.username +".json?count=" + opts.totalTweets + "&callback=?";
 		$.getJSON(jsonurl, function(data){
 			returnval = [];
+			$.getTweet.api = data;
 				if (opts.numberOfTweets > 1 && !($.isArray(opts.numberOfTweets))){
 					$.each(data, function(index, item){
 						returnval[index] = item.text;
@@ -74,7 +76,7 @@
 					returnval[0] = data[0].text;
 				} else {
 					var start = opts.numberOfTweets[0],
-						end = opts.numberOfTweets[1];
+						end = data.length-1;
 						if (start > end){
 							end = opts.numberOfTweets[0];
 							start = opts.numberOfTweets[1];
