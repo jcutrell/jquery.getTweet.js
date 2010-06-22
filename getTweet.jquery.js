@@ -17,11 +17,17 @@
 				if (opts.numberOfTweets > 1){
 					html = "<ul id='getTweet'>";
 					$.each(data, function(index, item){
-						html += "<li class='tweet'>" + item.text + "</li>";
+						var tweet = item.text.replace(/(https?:\/\/[^\s]+|www\.[^\s]+)/g, "<a href='$1'>$1</a>");
+						tweet = tweet.replace(/(?:^|\s)#([^\s]+)/g, "<a href='http://search.twitter.com/search?q=%23$1'> #$1</a> ");
+						tweet = tweet.replace(/@([^\s]+)/g, '<a href="http://twitter.com/$1">@$1</a>');
+						html += "<li class='tweet'>" + tweet + "</li>";
 					});
 					html += "</ul>";
 				} else if (opts.numberOfTweets = 1) {
-					html = data[0].text;
+					tweettext = data[0].text;
+					var tweet = tweettext.replace(/(https?:\/\/[^\s]+|www\.[^\s]+)/g, "<a href='$1'>$1</a>");
+					var	html =  tweet.replace(/(?:^|\s)#([^\s]+)\s/g, "<a href='http://search.twitter.com/search?q=%23$1'> #$1</a> ");
+						html = tweet.replace(/@([^\s]+)/g, '<a href="http://twitter.com/$1">@$1</a>');
 				}
 				that.html(html);
 			});
