@@ -90,7 +90,9 @@
 						}
 						var i = start;
 						for (var i = start; i <= end; i++){
-								returnval[(i-start)] = data[i].text;
+								if(data[i]){
+									returnval[(i-start)] = data[i].text;
+							}
 						}
 						if (reverse){
 							returnval = returnval.reverse();
