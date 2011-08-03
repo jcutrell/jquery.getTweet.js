@@ -11,7 +11,7 @@
 		var opts = $.extend({}, $.fn.getTweet.defaults, options);
 		return this.each(function(){
 			var that = $(this);
-			var jsonurl = "http://api.twitter.com/1/statuses/user_timeline/"+ opts.username +".json?count=" + opts.numberOfTweets + "&callback=?";
+			var jsonurl = location.protocol + "//api.twitter.com/1/statuses/user_timeline/"+ opts.username +".json?count=" + opts.numberOfTweets + "&callback=?";
 			$.getJSON(jsonurl, function(data){
 				var html = '';
 				if (opts.numberOfTweets > 1){
@@ -70,7 +70,7 @@
 				options.totalTweets = numberOfTweets;
 			}
 		var opts = $.extend({}, $.getTweet.defaults, options);
-		var jsonurl = "http://api.twitter.com/1/statuses/user_timeline/"+ opts.username +".json?count=" + opts.totalTweets + "&callback=?";
+		var jsonurl = location.protocol + "//api.twitter.com/1/statuses/user_timeline/"+ opts.username +".json?count=" + opts.totalTweets + "&callback=?";
 		$.getJSON(jsonurl, function(data){
 			returnval = [];
 			$.getTweet.api = data;
