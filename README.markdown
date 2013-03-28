@@ -1,5 +1,7 @@
-
 #jquery.getTweet.js -An easy to use tweet fetcher.
+
+
+## OFFICIAL NOTICE: Twitter's changes have broken this plugin. It will be left here for posterity and funsies.
 
 ####Created by Jonathan Cutrell
 ####twitter: @jcutrell
@@ -70,8 +72,6 @@ I have made the public twitter json object available to use via the $.getTweet.a
 			$('<span>"' + item.created_at + '"</span>').appendTo('#targetDiv')
 			});
 		});
-
-///////////////////////////
 
 ###**A few considerations...**
 
